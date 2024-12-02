@@ -13,6 +13,8 @@ public class RollerBall : MonoBehaviour {
     public float YOffset = 0.5f;
     public float XOffset = 0.5f;
 
+	public int Threshold = -2;
+
 	public float xmove;
 	public float ymove;
 
@@ -28,8 +30,8 @@ public class RollerBall : MonoBehaviour {
 	{
 		if (oscReciever.FloatY >0.1f || oscReciever.FloatX >0.1f)
 		{
-			ymove = (oscReciever.FloatY - YOffset) * -2;
-			xmove = (oscReciever.FloatX - XOffset) * -2;
+			ymove = (oscReciever.FloatY - YOffset) * Threshold;
+			xmove = (oscReciever.FloatX - XOffset) * Threshold;
         }
 		else
 		{
